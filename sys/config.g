@@ -22,18 +22,18 @@ M569 P0.4 S1                                 ; physical drive 0.4 (left) goes fo
 M584 X0.4 Y0.1 Z0.3:0.2 E0.0                 ; set drive mapping
 M350 X16 Y16 Z16 E16 I1                      ; configure microstepping with interpolation
 M92 X80.00 Y80.00 Z160.00 E94.30             ; set steps per mm
-M566 X2000.00 Y2000.00 Z600.00 E6000.00       ; set maximum instantaneous speed changes (mm/min)
-M203 X18000.00 Y18000.00 Z5000.00 E8000.00   ; set maximum speeds (mm/min)
-M201 X3000.00 Y3000.00 Z3000.00 E10000.00    ; set accelerations (mm/s^2)
-M906 X1000 Y1000 Z1000 E1000 I30             ; set motor currents (mA) and motor idle factor in per cent
+M566 X100.00 Y100.00 Z600.00 E300.00         ; set maximum instantaneous speed changes (mm/min)
+M203 X9000.00 Y9000.00 Z5000.00 E16000.00     ; set maximum speeds (mm/min)
+M201 X1000.00 Y1000.00 Z3000.00 E1000.00    ; set accelerations (mm/s^2)
+M906 X1200 Y1200 Z1000 E1400 I30             ; set motor currents (mA) and motor idle factor in per cent
 M84 S30                                      ; Set idle timeout
 
 ; StealthChop
-M569 P0.1 D3 V90						 	 ; stealthChop drive 0.1 (right) (104.2 mm/sec)
-M569 P0.4 D3 V90						 	 ; stealthChop drive 0.1 (left) (104.2 mm/sec)
+M569 P0.1 D3 V50						 	 ; stealthChop drive 0.1 (right) (104.2 mm/sec)
+M569 P0.4 D3 V50						 	 ; stealthChop drive 0.1 (left) (104.2 mm/sec)
 M569 P0.2 D3 V90						 	 ; stealthChop drive 0.1 (z-right) (52.1 mm/sec)
 M569 P0.3 D3 V90						 	 ; stealthChop drive 0.1 (z-left) (52.1 mm/sec)
-M569 P0.0 D3 V90						 	 ; stealthChop drive 0.1 (extruder) (104.2 mm/sec)
+;M569 P0.0 D3 V90						 	 ; stealthChop drive 0.1 (extruder) (104.2 mm/sec)
 
 ; Axis Limits
 M208 X0 Y0 Z0 S1                             ; set axis minima
